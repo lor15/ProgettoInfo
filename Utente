@@ -1,0 +1,21 @@
+package gestionevendite;
+import java.util.Scanner;
+
+public class Utente {
+    private String cognome,nome,email;
+    private int codiceUtente;
+    
+    public void inserimentoDati(){
+        Scanner tast = new Scanner(System.in);
+        System.out.println("Inserisci il cognome: ");
+        cognome = tast.nextLine();
+        System.out.println("Inserisci il nome: ");
+        nome = tast.nextLine();
+        System.out.println("Inserisci l'email: ");
+        email = tast.nextLine();
+        System.out.println("Inserisci il codice utente: ");
+        codiceUtente = tast.nextInt();
+    }
+    
+    
+}
