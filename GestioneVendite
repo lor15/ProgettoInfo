@@ -1,0 +1,50 @@
+package gestionevendite;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class GestioneVendite {
+
+    public static void main(String[] args) {
+       Vector<Prodotto> v = new Vector<Prodotto>(4);
+       Scanner tast = new Scanner(System.in);
+       Utente ute = new Utente();
+       Prodotto prod1 = new Prodotto("tv",12345,85,559);
+       Prodotto prod2 = new Prodotto("tablet",45678,70,289);
+       Prodotto prod3 = new Prodotto("smartphone",00123,150,210);
+       Prodotto prod4 = new Prodotto("pc",00245,75,670);
+       v.add(prod1);
+       v.add(prod2);
+       v.add(prod3);
+       v.add(prod4);
+       
+       System.out.println("Utente(1) o Fornitore(2) ");
+       int sc = tast.nextInt();
+        if(sc == 1){
+          ute.inserimentoDati();
+          System.out.println("Quale prodotto vuoi acquistare? ");
+          String prodotto = tast.nextLine();
+          String prodotto1 = tast.nextLine();
+          System.out.println("Quanti ne vuoi acquistare? ");
+          int quan = tast.nextInt();
+          for(int i=0;i<v.capacity();i++){
+            if(prodotto1.equals(v.elementAt(i).getNomeProdotto())){
+              v.elementAt(i).acquista(quan);
+              System.out.println("Sono rimasti "+v.elementAt(i).getQuantita()+" "+v.elementAt(i).getNomeProdotto());
+            }
+            }
+        }
+        if(sc == 2){
+          System.out.println("Inserisci il nome del prodotto che vuoi rifornire ");
+          String prod = tast.nextLine();
+          String prodotto2 = tast.nextLine();
+          System.out.println("Inserisci la quantita che vuoi aggiungere ");
+          int quant = tast.nextInt();
+          for(int i=0;i<v.capacity();i++){
+            if(prodotto2.equals(v.elementAt(i).getNomeProdotto())){
+                  v.elementAt(i).rifornimento(quant);
+                  System.out.println("Ci sono "+v.elementAt(i).getQuantita()+" "+v.elementAt(i).getNomeProdotto());
+                }
+            }
+        }     
+    } 
+}
