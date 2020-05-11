@@ -1,0 +1,51 @@
+package gestionevendite;
+import java.util.Scanner;
+
+public class Prodotto {
+    private String nomeProdotto;
+    private int codiceProdotto,quantita;
+    private float prezzo;
+
+    public Prodotto(){};
+    public Prodotto(String nomeProdotto, int codiceProdotto, int quantita, float prezzo) {
+        this.nomeProdotto = nomeProdotto;
+        this.codiceProdotto = codiceProdotto;
+        this.quantita = quantita;
+        this.prezzo = prezzo;
+    }
+
+    public String getNomeProdotto() {
+        return nomeProdotto;
+    }
+
+    public int getCodiceProdotto() {
+        return codiceProdotto;
+    }
+    
+    public int getQuantita() {
+        return quantita;
+    }
+
+    public void setQuantita(int quantita) {
+        this.quantita = quantita;
+    }
+
+    public float getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(float prezzo) {
+        this.prezzo = prezzo;
+    }
+    
+    public int acquista(int quan){
+        quantita=quantita-quan;
+        return quantita;
+    }
+    
+    public int rifornimento(int quant){
+        quantita=quantita+quant;
+        return quantita;
+    }
+    
+}
